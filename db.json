@@ -1,0 +1,24 @@
+{
+    "_default": {},
+    "groups": {},
+    "settings": {
+        "1": {
+            "TOKEN": "123"
+        },
+        "2": {
+            "URL_API": "https://api.vk.com/method/"
+        },
+        "3": {
+            "SECRET": "secret"
+        },
+        "4": {
+            "START_MESSAGE": "hi!"
+        }
+    },
+    "admin": {
+        "1": {
+            "name": "w0rng",
+            "id": 1
+        }
+    }
+}
