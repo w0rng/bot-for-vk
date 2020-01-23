@@ -6,8 +6,15 @@ import logging
 
 
 app = Flask(__name__)
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 logging.basicConfig(format = '%(levelname)-8s [%(asctime)s]  %(message)s', 
                     filename = 'log')
+
+@app.errorhandler(404)
+def http_404_handler(error):
+    logging.warning(f'Долбаеб {request.remote_addr} лезет в {request.path}')
+    return "I fuck your mom", 404
 
 # Главное тело бота
 def bot(json: dict) -> None:
@@ -44,7 +51,7 @@ def main():
         return 'ok'
     else:
         # Иначе шлем скрипткиди нахуй
-        abort(405)
+        abort(404)
 
 
 if __name__ == '__main__':
